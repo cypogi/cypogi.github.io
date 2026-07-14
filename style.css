@@ -1,5 +1,5 @@
 /* ===================================
-   MELCHOR PORTFOLIO V2
+    MELCHOR PORTFOLIO V2
 =================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;500;600;700;800&display=swap');
@@ -232,29 +232,22 @@ background:#38bdf8;
 
 }
 
+
 .hero-right{
-
 display:flex;
-
 justify-content:center;
-
 }
 
 .hero-right img{
-
 width:320px;
-
 height:320px;
-
 border-radius:50%;
-
 object-fit:cover;
-object-position: center 25%;
-
 border:8px solid #38bdf8;
-
 box-shadow:0 15px 45px rgba(0,0,0,.35);
 
+
+transform: scale(1.1) translateY(15px); 
 }
 
 /* ===========================
