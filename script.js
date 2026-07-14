@@ -1,5 +1,5 @@
 /* =========================================
-   MELCHOR PORTFOLIO V3
+   MELCHOR PORTFOLIO V5
 ========================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -26,11 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const currentTitle = jobTitles[titleIndex];
 
-        if (isDeleting) {
-            characterIndex--;
-        } else {
-            characterIndex++;
-        }
+        characterIndex += isDeleting ? -1 : 1;
 
         typingElement.textContent =
             currentTitle.substring(0, characterIndex);
@@ -104,10 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
         navLinks.forEach(link => {
             link.classList.remove("active");
 
-            if (
-                link.getAttribute("href") ===
-                `#${currentSection}`
-            ) {
+            if (link.getAttribute("href") === `#${currentSection}`) {
                 link.classList.add("active");
             }
         });
@@ -149,6 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (!stat) return;
 
                 let currentValue = 0;
+
                 const increment = Math.max(
                     1,
                     Math.ceil(stat.value / 55)
@@ -181,6 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     skillBars.forEach(bar => {
         const finalWidth = bar.style.width;
+
         bar.dataset.finalWidth = finalWidth;
         bar.style.width = "0";
     });
@@ -233,5 +228,50 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    console.log("Melchor Portfolio V3 loaded successfully.");
+
+    /* ==============================
+       DESKTOP MOUSE GLOW
+    ============================== */
+
+    const supportsHover =
+        window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+    if (supportsHover) {
+        const mouseGlow = document.createElement("div");
+
+        mouseGlow.className = "mouse-glow";
+
+        document.body.appendChild(mouseGlow);
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let glowX = 0;
+        let glowY = 0;
+
+        document.addEventListener("mousemove", event => {
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+
+            mouseGlow.classList.add("mouse-glow-visible");
+        });
+
+        document.addEventListener("mouseleave", () => {
+            mouseGlow.classList.remove("mouse-glow-visible");
+        });
+
+        function animateMouseGlow() {
+            glowX += (mouseX - glowX) * 0.12;
+            glowY += (mouseY - glowY) * 0.12;
+
+            mouseGlow.style.transform =
+                `translate3d(${glowX}px, ${glowY}px, 0)
+                 translate(-50%, -50%)`;
+
+            requestAnimationFrame(animateMouseGlow);
+        }
+
+        animateMouseGlow();
+    }
+
+    console.log("Melchor Portfolio V5 loaded successfully.");
 });
