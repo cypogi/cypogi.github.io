@@ -2,7 +2,7 @@
    MELCHOR PORTFOLIO V2
 =================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;500;600;700;800&display=swap');
 
 *{
 margin:0;
@@ -249,6 +249,7 @@ height:320px;
 border-radius:50%;
 
 object-fit:cover;
+object-position: center 20%; /* Ito ang magbababa sa mukha/larawan sa loob ng bilog */
 
 border:8px solid #38bdf8;
 
