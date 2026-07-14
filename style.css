@@ -249,7 +249,7 @@ height:320px;
 border-radius:50%;
 
 object-fit:cover;
-object-position: center 20%; /* Ito ang magbababa sa mukha/larawan sa loob ng bilog */
+object-position: center 5%; /* Ibinaba nito ang posisyon ng larawan para lumitaw ang buhok at magkasya ang mukha */
 
 border:8px solid #38bdf8;
 
