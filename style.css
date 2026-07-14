@@ -1190,3 +1190,48 @@ REDUCED MOTION
         transition-duration:.01ms !important;
     }
 }
+
+/* ===========================
+MOUSE GLOW EFFECT
+=========================== */
+
+.mouse-glow{
+    position:fixed;
+    top:0;
+    left:0;
+    width:360px;
+    height:360px;
+    z-index:0;
+    pointer-events:none;
+    border-radius:50%;
+    opacity:0;
+    background:radial-gradient(
+        circle,
+        rgba(56,189,248,.14) 0%,
+        rgba(37,99,235,.07) 38%,
+        transparent 72%
+    );
+    filter:blur(10px);
+    transition:opacity .35s ease;
+    will-change:transform;
+}
+
+.mouse-glow-visible{
+    opacity:1;
+}
+
+nav,
+header,
+section,
+footer{
+    position:relative;
+    z-index:1;
+}
+
+/* Walang mouse glow sa phone at tablet :) */
+
+@media(hover:none), (pointer:coarse){
+    .mouse-glow{
+        display:none;
+    }
+}
