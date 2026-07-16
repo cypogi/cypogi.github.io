@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const jobTitles = [
         "Administrative Support",
         "Document Controller",
-        "CAD & Technical Documentation",
-        "AI MQA Evaluation Practice"
+        "CAD Documentation",
+        "AI MQA Practice"
     ];
 
     let titleIndex = 0;
