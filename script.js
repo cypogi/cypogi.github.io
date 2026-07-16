@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Administrative Support",
         "Document Controller",
         "CAD Documentation",
-        "AI MQA Practice"
+        "AI Data & Quality Evaluation"
     ];
 
     let titleIndex = 0;
